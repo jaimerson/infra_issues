@@ -1,24 +1,12 @@
-# README
+# InfraIssues
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `cp config/database.yml.sample config/database.yml`
+- Configure username and password in `config/database.yml` for `test` and `development`
+- Install ruby if you haven't already:
+  - `\curl -sSL https://get.rvm.io | bash -s stable --ruby`
+- Install PostgreSQL >= 9.4 if you haven't already
+- Install node >= 8.9 and yarn >= 1.12
+- Run `bin/setup`
+- Profit
