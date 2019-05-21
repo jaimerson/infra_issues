@@ -10,3 +10,8 @@
 - Install node >= 8.9 and yarn >= 1.12
 - Run `bin/setup`
 - Profit
+
+## Running server
+
+- `rails server`
+- Go to `http://localhost:3000`
