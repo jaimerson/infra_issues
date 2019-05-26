@@ -1,7 +1,52 @@
-Here will be the issues.
-
-<ul>
-  <% 10.times do |n| %>
-    <li>Issue <%= n %></li>
-  <% end %>
-</ul>
+<%= link_to "Registrar incidente", new_issue_path %>
+<% if @issues.active.any? %>
+  <h3>Incidentes ativos</h3>
+  <table>
+    <thead>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Status</th>
+      <th>Prioridade</th>
+      <th>Ações</th>
+    </thead>
+    <tbody>
+      <% @issues.active.each do |issue| %>
+        <tr>
+          <td><%= issue.title %></td>
+          <td><%= issue.description %></td>
+          <td><%= issue.status %></td>
+          <td><%= issue.priority %></td>
+          <td>
+            <%= link_to "Editar", edit_issue_path(issue) %>
+            <%= button_to "Abandonar", issue, method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<% if @issues.inactive.any? %>
+  <h3>Incidentes inativos</h3>
+  <table>
+    <thead>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Status</th>
+      <th>Prioridade</th>
+      <th>Ações</th>
+    </thead>
+    <tbody>
+      <% @issues.inactive.each do |issue| %>
+        <tr>
+          <td><%= issue.title %></td>
+          <td><%= issue.description %></td>
+          <td><%= issue.status %></td>
+          <td><%= issue.priority %></td>
+          <td>
+            Reabrir
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
