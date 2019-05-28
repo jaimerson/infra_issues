@@ -1,52 +1,47 @@
 <%= link_to "Registrar incidente", new_issue_path %>
-<% if @issues.active.any? %>
-  <h3>Incidentes ativos</h3>
-  <table>
-    <thead>
-      <th>Título</th>
-      <th>Descrição</th>
-      <th>Status</th>
-      <th>Prioridade</th>
-      <th>Ações</th>
-    </thead>
-    <tbody>
-      <% @issues.active.each do |issue| %>
-        <tr>
-          <td><%= issue.title %></td>
-          <td><%= issue.description %></td>
-          <td><%= issue.status %></td>
-          <td><%= issue.priority %></td>
-          <td>
+<div class="admin-incidentes">
+  <div class="container">
+  <% if @issues.active.any? %>
+    <h1>Incidentes ativos</h1>
+    <% @issues.active.each do |issue| %>
+      <div class="incidente">
+          <div class="incidente-infos">
+            <span class="data"><%= issue.created_at %></span>
+            <div class="incidente-titulo">
+              <h3><%= issue.title %></h3>
+              <span class="status <%= issue.status %>"><%= issue.status %></span>
+              <span class="priority <%= issue.priority %>"><%= issue.priority %></span>
+            </div>
+            <p class="localizacao">Localização: Segundo andar, sala B203</p>
+            <p>Descrição: <%= issue.description %></p>
+          </div>
+          <div class="incidente-acoes">
             <%= link_to "Editar", edit_issue_path(issue) %>
             <%= button_to "Abandonar", issue, method: :delete %>
-          </td>
-        </tr>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-<% end %>
-<% if @issues.inactive.any? %>
-  <h3>Incidentes inativos</h3>
-  <table>
-    <thead>
-      <th>Título</th>
-      <th>Descrição</th>
-      <th>Status</th>
-      <th>Prioridade</th>
-      <th>Ações</th>
-    </thead>
-    <tbody>
+    <% end %>
+
+    <% if @issues.inactive.any? %>
+      <h1>Incidentes inativos</h1>
       <% @issues.inactive.each do |issue| %>
-        <tr>
-          <td><%= issue.title %></td>
-          <td><%= issue.description %></td>
-          <td><%= issue.status %></td>
-          <td><%= issue.priority %></td>
-          <td>
-            Reabrir
-          </td>
-        </tr>
+        <div class="incidente">
+          <div class="incidente-infos">
+            <span class="data"><%= issue.updated_at %></span>
+            <div class="incidente-titulo">
+              <h3><%= issue.title %></h3>
+              <span class="status <%= issue.status %>"><%= issue.status %></span>
+              <span class="priority <%= issue.priority %>"><%= issue.priority %></span>
+            </div>
+            <p class="localizacao">Localização: Segundo andar, sala B203</p>
+            <p>Descrição: <%= issue.description %></p>
+          </div>
+          <div class="incidente-acoes">
+            <a href="#">Reabrir</a>
+          </div>
+        </div>
       <% end %>
-    </tbody>
-  </table>
-<% end %>
+    <% end %>
+  </div>
+</div>
