@@ -1,6 +1,6 @@
-<header class="header">
+<% content_for :menu_items do %>
   <%= link_to "Registrar incidente", new_issue_path %>
-</header>
+<% end %>
 <div class="admin-incidentes">
   <div class="container">
   <% if @issues.active.any? %>

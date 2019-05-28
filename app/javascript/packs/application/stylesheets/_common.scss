@@ -1,0 +1,33 @@
+@import '_variables';
+
+.header {
+  background: $light-blue;
+  width: 100%;
+  min-height: 40px;
+
+  .link {
+    border: none;
+    background-color: transparent;
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      background-color: lighten($light-blue, 5%);
+    }
+  }
+
+  a, .link {
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 auto;
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    clear: none;
+  }
+}

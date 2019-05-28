@@ -11,10 +11,11 @@
 
   <body>
     <header class="header">
-    <%= link_to "Home", root_path %>
-    <% if user_signed_in? %>
-      <%= button_to "Sair", destroy_user_session_path, method: :delete %>
-    <% end %>
+      <%= link_to "Home", root_path %>
+      <%= yield :menu_items %>
+      <% if user_signed_in? %>
+        <%= button_to "Sair", destroy_user_session_path, method: :delete, class: 'link' %>
+      <% end %>
     </header>
     <% %i[notice alert].each do |type| %>
       <% if flash[type] %>

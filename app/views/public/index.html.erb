@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InfraIssues</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <header class="landing-page header">
+      <%= link_to "Entrar", new_user_session_path %>
+    </header>
+    <section class="landing-page large-header">
+      <h1>InfraIssues</h1>
+      <h3>Registro de incidentes no CIVT</h3>
+    </section>
+    <main class="landing-page container">
+      <p>Ajude a melhorar a infraestrutura do prédio!</p>
+      <%= link_to "Cadastrar incidente", new_issue_path %>
+    </main>
+  </body>
+</html>
