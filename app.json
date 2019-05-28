@@ -28,6 +28,9 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
+    },
+    "HOST": {
+      "required": true
     }
   },
   "formation": {
