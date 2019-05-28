@@ -56,6 +56,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: ENV.fetch('HOST', 'https://infra-issues.herokuapp.com') }
+  config.action_mailer.delivery_method = :test
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
