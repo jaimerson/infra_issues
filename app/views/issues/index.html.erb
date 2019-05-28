@@ -8,7 +8,12 @@
     <% @issues.active.each do |issue| %>
       <div class="incidente">
           <div class="incidente-infos">
-            <span class="data"><%= issue.created_at %></span>
+            <span class="data">
+              Criado em:
+              <%= I18n.l(issue.created_at, format: :short) %>
+              Última atualização em:
+              <%= I18n.l(issue.updated_at, format: :short) %>
+            </span>
             <div class="incidente-titulo">
               <h3><%= issue.title %></h3>
               <span class="status <%= issue.status %>"><%= issue.status %></span>
@@ -30,7 +35,12 @@
       <% @issues.inactive.each do |issue| %>
         <div class="incidente">
           <div class="incidente-infos">
-            <span class="data"><%= issue.updated_at %></span>
+            <span class="data">
+              Criado em:
+              <%= I18n.l(issue.created_at, format: :short) %>
+              Última atualização em:
+              <%= I18n.l(issue.updated_at, format: :short) %>
+            </span>
             <div class="incidente-titulo">
               <h3><%= issue.title %></h3>
               <span class="status <%= issue.status %>"><%= issue.status %></span>
