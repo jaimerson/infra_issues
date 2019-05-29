@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Issues management', type: :request do
+  let(:user) { create(:user) }
+
+  before do
+    sign_in user
+  end
+
   describe 'GET index' do
     let!(:issues) { create_list(:issue, 2) }
 

@@ -11,6 +11,16 @@
 
   <body>
     <%= link_to "Home", root_path %>
+    <% if user_signed_in? %>
+      <%= button_to "Sair", destroy_user_session_path, method: :delete %>
+    <% end %>
+    <% %i[notice alert].each do |type| %>
+      <% if flash[type] %>
+        <div class="flash <%= type %>">
+          <%= flash[type] %>
+        </div>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
