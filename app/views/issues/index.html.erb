@@ -1,4 +1,6 @@
-<%= link_to "Registrar incidente", new_issue_path %>
+<header class="header">
+  <%= link_to "Registrar incidente", new_issue_path %>
+</header>
 <div class="admin-incidentes">
   <div class="container">
   <% if @issues.active.any? %>
@@ -29,7 +31,7 @@
     <% end %>
 
     <% if @issues.inactive.any? %>
-      <h1>Incidentes inativos</h1>
+      <h1>Incidentes inativos</h1> 
       <% @issues.inactive.each do |issue| %>
         <div class="incidente">
           <div class="incidente-infos">
