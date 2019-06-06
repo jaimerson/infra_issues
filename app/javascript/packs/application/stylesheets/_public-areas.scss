@@ -1,0 +1,47 @@
+@import 'variables';
+
+.large-header {
+  width: 100%;
+  background-color: darken($light-blue, 5%);
+  padding-top: 20px;
+  min-height: 200px;
+
+  h1{
+    margin: 0;
+    padding-top: 40px;
+    font-size: 72px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    display: table;
+    margin: auto auto;
+    color: $white;
+  }
+}
+
+.landing-page {
+  &.container{
+    p, a{
+      display: table;
+      margin: 20px auto;
+    }
+
+    p {
+      font-size: 25px;
+    }
+
+    a {
+      background-color: darken($dark-yellow, 15%);
+      color: $white;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 30px;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover, &:focus{
+        background-color: darken($dark-yellow, 5%);
+      }
+    }
+  }
+}

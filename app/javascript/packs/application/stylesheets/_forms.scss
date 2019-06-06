@@ -1,0 +1,29 @@
+@import '_variables';
+
+label{
+  font-weight: bold;
+  font-size: 1.17em;
+}
+
+.text-areas{
+  display:flex;
+  margin-left: 50px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+#button{
+  background: lighten($dark-blue , 20%);
+  color: white;
+  border-radius: 3px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+  &:hover,
+  &:focus{
+    opacity: 0.8;
+  };
+}

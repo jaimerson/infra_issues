@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap');
-@import '_admin-areas';
+@import 'reset';
+@import 'admin-areas';
+@import 'common';
+@import 'public-areas';
+@import 'forms';
 
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  background-color: $light-gray;
 }
 
 .container {
@@ -11,6 +16,7 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  background-color: $white;
 }
 @media (min-width: 768px) {
   .container {
