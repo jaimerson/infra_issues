@@ -20,7 +20,8 @@ label{
   font-size: 14px;
   font-weight: bold;
   border: none;
-  height: 35px;
+  height: 15px;
+  box-sizing: unset;
   cursor: pointer;
   &:hover,
   &:focus{

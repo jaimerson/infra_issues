@@ -10,7 +10,7 @@
     background-color: transparent;
   }
 
-  a {
+  a, input {
     &:hover,
     &:focus {
       background-color: lighten($light-blue, 5%);
@@ -30,4 +30,9 @@
     float: left;
     clear: none;
   }
+
+  #exit_button{
+    float: right;
+  }
 }
+
