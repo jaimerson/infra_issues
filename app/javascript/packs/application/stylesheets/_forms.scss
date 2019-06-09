@@ -3,6 +3,7 @@
 label{
   font-weight: bold;
   font-size: 1.17em;
+  width: 100px;
 }
 
 .text-areas{
@@ -22,6 +23,7 @@ label{
   border: none;
   height: 15px;
   box-sizing: unset;
+  margin-left: 50px;
   cursor: pointer;
   &:hover,
   &:focus{

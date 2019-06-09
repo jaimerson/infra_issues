@@ -1,17 +1,15 @@
 <%= form_for issue do |f| %>
-  <div class="text-areas">
-      <%= f.label :Título %>
-      <%= f.text_field :title %>
+  <div class="container">
+    <div class="text-areas">
+        <%= f.label :Título %>
+        <%= f.text_field :title %>
+    </div>
+      <br>
+    <div class="text-areas">
+        <%= f.label :Descrição %>
+        <%= f.text_area :description %>
+    </div>
+    <br>
+        <%=f.submit :OK, :id=>"button" %>  
+        <% end %>
   </div>
-    
-  <br>
-  
-  <div class="text-areas">
-      <%= f.label :Descrição %>
-      <%= f.text_area :description %>
-     
-  </div>
-  
-  <br>
-  <%=f.submit :OK, :id=>"button" %>  
-  <% end %>
