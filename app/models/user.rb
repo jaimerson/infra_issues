@@ -9,4 +9,6 @@ class User < ApplicationRecord
     staff: 1,
     admin: 2
   }
+
+  has_many :issues, foreign_key: :reported_by
 end
