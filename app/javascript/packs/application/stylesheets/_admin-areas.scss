@@ -2,6 +2,8 @@
 .admin-incidentes {
   h1 {
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px; 
   }
 
   .incidente {
@@ -87,12 +89,13 @@
         input {
           background: lighten($dark-blue, 20%);
           color: white;
+          box-sizing: unset;
+          height: 14px;
           padding: 8px 20px;
           border-radius: 3px;
           font-size: 14px;
           font-weight: bold;
           border: none;
-          height: 35px;
           cursor: pointer;
           &:hover,
           &:focus {

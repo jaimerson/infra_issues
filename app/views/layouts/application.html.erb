@@ -14,7 +14,7 @@
       <%= link_to "Home", root_path %>
       <%= yield :menu_items %>
       <% if user_signed_in? %>
-        <%= button_to "Sair", destroy_user_session_path, method: :delete, class: 'link' %>
+        <%= button_to "Sair", destroy_user_session_path, method: :delete, class: 'link', :id=>"exit_button" %>
       <% end %>
     </header>
     <% %i[notice alert].each do |type| %>
