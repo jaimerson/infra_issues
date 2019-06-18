@@ -19,7 +19,7 @@
             <div class="">
               <p class="localizacao"><strong>Reportado por:</strong> <%= issue.reporter.email %></p>
             </div>
-            <p class="localizacao">Localização: Segundo andar, sala B203</p>
+            <p class="localizacao">Localização: <%= issue.location.name %></p>
             <p>Descrição: <%= issue.description %></p>
           </div>
           <div class="incidente-acoes">

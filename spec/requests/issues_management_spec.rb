@@ -44,11 +44,13 @@ RSpec.describe 'Issues management', type: :request do
 
   describe 'POST create' do
     context 'with correct params' do
+      let(:location) { create(:location, name: 'Estacionamento') }
       let(:params) do
         {
           issue: {
             title: 'Some issue',
-            description: 'dolorem ipsum'
+            description: 'dolorem ipsum',
+            location_id: location.id
           }
         }
       end

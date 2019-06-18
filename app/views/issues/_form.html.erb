@@ -9,6 +9,12 @@
         <%= f.label :Descrição %>
         <%= f.text_area :description %>
     </div><br />
+    <div class="text-areas">
+        <%= f.label :Local %>
+        <%= f.select :location_id, options_for_select(
+          Location.all.map { |l| [l.name, l.id] }
+        ) %>
+    </div><br />
       <%=f.submit :OK, :id=>"button" %>  
       <% end %>
     </div>

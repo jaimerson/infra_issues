@@ -8,7 +8,7 @@
   <div class="details">
     <p><b>Última atualização em:</b>
     <%= I18n.l(@issue.updated_at, format: :short) %> (criado em <%= I18n.l(@issue.created_at, format: :short) %>)</p>
-    <p class="localizacao"><b>Localização:</b> Segundo andar, sala B203</p>
+    <p class="localizacao">Localização: <%= @issue.location.name %></p>
     <br>
     <p><span class="status <%= @issue.status %>"><%= @issue.status %></span>
   </div>
