@@ -1,16 +1,18 @@
 <div class="issue">
-  <h2>
-    <%= @issue.title %>
-  </h2>
-  <p>
+  <div class="title">
+    <p>Incidente: <%= @issue.title %></p>
+  </div>
+  <div class="details">
+    <p><b>Última atualização em:</b>
+    <%= I18n.l(@issue.updated_at, format: :short) %> (criado em <%= I18n.l(@issue.created_at, format: :short) %>)</p>
+    <p class="localizacao"><b>Localização:</b> Segundo andar, sala B203</p>
+    <br>
+    <p><span class="status <%= @issue.status %>"><%= @issue.status %></span>
+  </div>
+
+
+  <div class="description">
+    <h1>Descrição:</h1>
     <%= @issue.description %>
-  </p>
-  <p>
-    <strong>Status: </strong>
-    <%= @issue.status %>
-  </p>
-  <p>
-    <strong>Prioridade: </strong>
-    <%= @issue.priority %>
-  </p>
+  </div>
 </div>

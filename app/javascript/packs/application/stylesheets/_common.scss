@@ -1,4 +1,4 @@
-@import '_variables';
+@import "_variables";
 
 .header {
   background: $light-blue;
@@ -10,14 +10,16 @@
     background-color: transparent;
   }
 
-  a, input {
+  a,
+  input {
     &:hover,
     &:focus {
       background-color: lighten($light-blue, 5%);
     }
   }
 
-  a, .link {
+  a,
+  .link {
     text-decoration: none;
     color: white;
     padding: 8px 20px;
@@ -31,8 +33,7 @@
     clear: none;
   }
 
-  #exit_button{
+  #exit_button {
     float: right;
   }
 }
-
