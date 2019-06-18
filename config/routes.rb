@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   namespace :staff do
-    resources :issues, except: %i[show create]
+    resources :issues, only: %i[index edit update destroy]
   end
 
   resources :issues do

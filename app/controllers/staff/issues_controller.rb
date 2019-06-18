@@ -1,14 +1,10 @@
 class Staff::IssuesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_issue, only: %i[show edit update destroy]
+  before_action :find_issue, only: %i[edit update destroy]
 
   def index
     authorize! :read, Issue
     @issues = Issue.all
-  end
-
-  def show
-    authorize! :read, @issue
   end
 
   def edit
