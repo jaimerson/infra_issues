@@ -1,5 +1,6 @@
 @import '_variables';
 
+
 label{
   font-weight: bold;
   font-size: 1.17em;
@@ -8,7 +9,7 @@ label{
 
 .text-areas{
   display:flex;
-  margin-left: 50px;
+  margin-left: 0px;
   margin-top: 10px;
   align-items: center;
 }
@@ -23,7 +24,6 @@ label{
   border: none;
   height: 15px;
   box-sizing: unset;
-  margin-left: 50px;
   cursor: pointer;
   &:hover,
   &:focus{
