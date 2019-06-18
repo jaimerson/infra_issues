@@ -1,0 +1,13 @@
+<%= form_for user, url: path do |f| %>
+  <div class="text-areas">
+    <%= f.label :Email %>
+    <%= f.email_field :email %>
+  </div>
+  <br>
+  <div class="text-areas">
+    <%= f.label :Senha %>
+    <%= f.password_field :password %>
+  </div>
+  <br>
+  <%=f.submit :OK, :id=>"button" %>
+<% end %>

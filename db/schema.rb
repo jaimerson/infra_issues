@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_195521) do
+ActiveRecord::Schema.define(version: 2019_06_11_213838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_195521) do
     t.datetime "closed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "reported_by"
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_195521) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.integer "role", default: 0, null: false
+    t.integer "role", null: false, default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
