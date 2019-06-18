@@ -47,7 +47,8 @@
             background: $dark-yellow;
           }
 
-          &.waiting, &.waiting_confirmation {
+          &.waiting,
+          &.waiting_confirmation {
             background: lighten($dark-yellow, 10%);
           }
 
@@ -166,4 +167,92 @@
       text-transform: uppercase;
     }
   }
+}
+
+.super-admin-user-list {
+  background-color: $white;
+  padding: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  margin: 10px;
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  table {
+    margin: 0 auto;
+    background: white;
+    border: 1px solid grey;
+    font-size: 12pt;
+    border-collapse: collapse;
+    margin: 10px 0;
+  }
+  table thead th,
+  table tfoot th {
+    color: $white;
+    background: $dark-blue;
+  }
+  table caption {
+    padding: 0.5em;
+  }
+  table th,
+  table td {
+    padding: 0.5em;
+    border: 1px solid lightgrey;
+  }
+
+  /* Zebra Table Style */
+  [data-table-theme*="zebra"] tbody tr:nth-of-type(odd) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  [data-table-theme*="zebra"][data-table-theme*="dark"]
+    tbody
+    tr:nth-of-type(odd) {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  /* Dark Style */
+  [data-table-theme*="dark"] {
+    color: #ddd;
+    background: #333;
+    font-size: 12pt;
+    border-collapse: collapse;
+  }
+  [data-table-theme*="dark"] thead th,
+  [data-table-theme*="dark"] tfoot th {
+    color: #aaa;
+    background: rgba(0255, 255, 255, 0.15);
+  }
+  [data-table-theme*="dark"] caption {
+    padding: 0.5em;
+  }
+  [data-table-theme*="dark"] th,
+  [data-table-theme*="dark"] td {
+    padding: 0.5em;
+    border: 1px solid grey;
+  }
+  .inline {
+    display: flex;
+    justify-content: space-around;
+    border: none;
+  }
+  a,
+  input {
+    color: $white;
+    background-color: $dark-blue;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 8px;
+    margin: 10px 0;
+    text-decoration: none;
+    cursor: pointer;
+    width: auto;
+  }
+}
+
+.forms {
+  background-color: $white;
+  padding: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  margin: 10px;
 }

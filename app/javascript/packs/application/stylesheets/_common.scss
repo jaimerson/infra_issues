@@ -37,3 +37,10 @@
     float: right;
   }
 }
+
+input {
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid $light-blue;
+  border-radius: 5px;
+}
