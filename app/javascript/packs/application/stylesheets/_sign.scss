@@ -1,0 +1,54 @@
+@import 'variables';
+
+#title{
+  font-weight: bold;
+  font-size: 1.17em;
+  text-align: center;
+  margin: 10px auto; 
+
+}
+.field{
+  margin: 5px auto;
+}
+
+#button-cadastrar,#button-entrar{
+  background: lighten($dark-blue , 20%);
+  color: white;
+  border-radius: 3px;
+  padding: 8px 20px;
+  margin:15px 0;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  height: 15px;
+  box-sizing: unset;
+  cursor: pointer;
+  &:hover,
+  &:focus{
+    opacity: 0.8;
+  }
+}
+#entrar, #cadastrar{
+    background: $light-blue;
+    text-decoration: none;
+    color: white;
+    box-sizing: unset;
+    padding: 6px 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  
+}
+
+#class{
+  margin: 10px auto;
+  
+}
+
+.frases{
+ position: absolute;
+ margin: 20px auto;
+}
+
