@@ -40,7 +40,7 @@
   },
   "name": "infra_issues",
   "scripts": {
-    "postdeploy": "rake db:migrate db:seed"
+    "postdeploy": "rake db:migrate"
   },
   "stack": "heroku-18"
 }

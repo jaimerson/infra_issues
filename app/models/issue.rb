@@ -18,6 +18,4 @@ class Issue < ApplicationRecord
 
   scope :active, -> { where(status: %i[open waiting waiting_confirmation]) }
   scope :inactive, -> { where(status: %i[closed finished]) }
-
-  belongs_to :reporter, class_name: 'User', foreign_key: :reported_by
 end

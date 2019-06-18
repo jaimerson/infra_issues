@@ -20,7 +20,7 @@
     <% %i[notice alert].each do |type| %>
       <% if flash[type] %>
         <div class="flash <%= type %>">
-          <%= Array(flash[type]).to_sentence %>
+          <%= flash[type] %>
         </div>
       <% end %>
     <% end %>

@@ -3,11 +3,10 @@ class IssuesController < ApplicationController
   before_action :find_issue, only: %i[show edit update destroy]
 
   def index
-    @issues = current_user.issues
+    @issues = Issue.all
   end
 
   def show
-    authorize! :read, @issue
   end
 
   def new
@@ -15,32 +14,25 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = Issue.new(issue_params.merge(reporter: current_user))
-    if @issue.save
+    if @issue = Issue.create(issue_params)
       redirect_to @issue
     else
-      flash.now[:alert] = @issue.errors.full_messages
       render :new
     end
   end
 
   def edit
-    authorize! :update, @issue
   end
 
   def destroy
-    authorize! :destroy, @issue
     @issue.update(status: Issue.statuses[:closed])
     render :show
   end
 
   def update
-    authorize! :update, @issue
-
     if @issue.update(issue_params)
       redirect_to @issue
     else
-      flash.now[:alert] = @issue.errors.full_messages
       render :edit
     end
   end
