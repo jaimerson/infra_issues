@@ -15,7 +15,7 @@
               <%= I18n.l(issue.updated_at, format: :short) %>
             </span>
             <div class="incidente-titulo">
-              <h3><%= issue.title %></h3>
+              <h3><a href="/issues/<%= issue.id %>"> <%= issue.title %></a></h3>
               <span class="status <%= issue.status %>"><%= issue.status %></span>
               <span class="priority <%= issue.priority %>"><%= issue.priority %></span>
             </div>

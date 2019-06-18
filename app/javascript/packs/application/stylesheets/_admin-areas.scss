@@ -1,9 +1,9 @@
-@import '_variables';
+@import "_variables";
 .admin-incidentes {
   h1 {
     text-align: center;
     padding-top: 10px;
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
   }
 
   .incidente {
@@ -103,6 +103,59 @@
           }
         }
       }
+    }
+  }
+}
+
+.issue {
+  .title {
+    background-color: $dark-blue;
+    color: white;
+    padding: 15px;
+    font-size: 25px;
+  }
+  .details {
+    border-radius: 5px;
+    background-color: $white;
+    padding: 15px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    margin: 10px;
+    b {
+      font-weight: bold;
+    }
+    .status {
+      color: white;
+      padding: 3px 20px;
+      border-radius: 3px;
+      margin-right: 20px;
+
+      &.closed {
+        background: lighten($dark-blue, 20%);
+      }
+
+      &.open {
+        background: $dark-yellow;
+      }
+
+      &.solved {
+        background: $dark-green;
+      }
+    }
+    .priority {
+      background: lighten($dark-red, 20%);
+      color: white;
+      padding: 3px 20px;
+      border-radius: 3px;
+    }
+  }
+  .description {
+    margin: 10px;
+    background-color: $white;
+    padding: 15px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    h1 {
+      font-size: 20px;
+      text-transform: uppercase;
     }
   }
 }
