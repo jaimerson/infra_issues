@@ -47,7 +47,11 @@
             background: $dark-yellow;
           }
 
-          &.solved {
+          &.waiting, &.waiting_confirmation {
+            background: lighten($dark-yellow, 10%);
+          }
+
+          &.finished {
             background: $dark-green;
           }
         }

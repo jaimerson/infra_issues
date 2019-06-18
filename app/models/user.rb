@@ -11,4 +11,12 @@ class User < ApplicationRecord
   }
 
   has_many :issues, foreign_key: :reported_by
+
+  before_save :set_role
+
+  private
+
+  def set_role
+    self.role ||= :reporter
+  end
 end

@@ -1,0 +1,37 @@
+<div  class="admin-incidentes">
+  <h1>Editar incidente</h1>
+</div>
+
+<div class="issue">
+  <div class="title">
+    <p>Incidente: <%= @issue.title %></p>
+  </div>
+  <div class="details">
+    <p><b>Última atualização em:</b>
+    <%= I18n.l(@issue.updated_at, format: :short) %> (criado em <%= I18n.l(@issue.created_at, format: :short) %>)</p>
+    <p class="localizacao"><b>Localização:</b> Segundo andar, sala B203</p>
+    <br>
+    <p><span class="status <%= @issue.status %>"><%= @issue.status %></span>
+  </div>
+
+
+  <div class="description">
+    <h1>Descrição:</h1>
+    <%= @issue.description %>
+  </div>
+</div>
+
+<%= form_for @issue, url: staff_issue_path(@issue) do |f| %>
+  <div class="container">
+    <div class="text-areas">
+      <%= f.label 'Status' %>
+      <%= f.select :status, options_for_select(Issue.options_for_status_select, @issue.status) %>
+    </div>
+    <br>
+    <div class="text-areas">
+      <%= f.label 'Prioridade' %>
+      <%= f.select :priority, options_for_select(Issue.options_for_priority_select, @issue.priority) %>
+    </div><br />
+    <%=f.submit 'Atualizar', :id=>"button" %>
+  </div>
+<% end %>

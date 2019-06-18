@@ -11,9 +11,13 @@ Rails.application.routes.draw do
   end
 
   namespace :staff do
-    resources :issues, except: %i[destroy edit update create]
+    resources :issues, only: %i[index edit update destroy]
   end
 
-  resources :issues
+  resources :issues do
+    member do
+      put 'reopen', to: 'issues#reopen'
+    end
+  end
   resources :public, only: %i[index]
 end
