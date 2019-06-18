@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    attributes:
+      issue:
+        priorities:
+          low: Baixa
+          medium: 'Média'
+          high: 'Alta'
+          urgent: 'Urgente'
+        statuses:
+          open: Aberto
+          waiting: Aguardando
+          closed: Fechado
+          waiting_confirmation: 'Aguardando confirmação'
+          finished: Finalizado

@@ -30,7 +30,7 @@
     <% end %>
 
     <% if @issues.inactive.any? %>
-      <h1>Incidentes inativos</h1> 
+      <h1>Incidentes inativos</h1>
       <% @issues.inactive.each do |issue| %>
         <div class="incidente">
           <div class="incidente-infos">
@@ -49,7 +49,7 @@
             <p>Descrição: <%= issue.description %></p>
           </div>
           <div class="incidente-acoes">
-            <a href="#">Reabrir</a>
+            <%= button_to "Reabrir", reopen_issue_path(issue), method: :put %>
           </div>
         </div>
       <% end %>

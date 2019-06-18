@@ -20,4 +20,16 @@ class Issue < ApplicationRecord
   scope :inactive, -> { where(status: %i[closed finished]) }
 
   belongs_to :reporter, class_name: 'User', foreign_key: :reported_by
+
+  def self.options_for_priority_select
+    priorities.keys.map do |priority|
+      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.priorities.#{priority}"), priority]
+    end
+  end
+
+  def self.options_for_status_select
+    statuses.keys.map do |status|
+      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.statuses.#{status}"), status]
+    end
+  end
 end

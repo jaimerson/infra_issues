@@ -1,0 +1,34 @@
+<div class="admin-incidentes">
+  <div class="container">
+  <% if @issues.any? %>
+    <h1>Incidentes</h1>
+    <% @issues.each do |issue| %>
+      <div class="incidente">
+          <div class="incidente-infos">
+            <span class="data">
+              Criado em:
+              <%= I18n.l(issue.created_at, format: :short) %>
+              Última atualização em:
+              <%= I18n.l(issue.updated_at, format: :short) %>
+            </span>
+            <div class="incidente-titulo">
+              <h3><%= issue.title %></h3>
+              <span class="status <%= issue.status %>"><%= Issue.human_enum_name(:status, issue.status) %></span>
+              <span class="priority <%= issue.priority %>"><%= Issue.human_enum_name(:priority, issue.priority) %></span>
+            </div>
+            <div class="">
+              <p class="localizacao"><strong>Reportado por:</strong> <%= issue.reporter.email %></p>
+            </div>
+            <p class="localizacao">Localização: Segundo andar, sala B203</p>
+            <p>Descrição: <%= issue.description %></p>
+          </div>
+          <div class="incidente-acoes">
+            <%= link_to "Editar", edit_staff_issue_path(issue) %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Nenhum incidente reportado.</p>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class IssuesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_issue, only: %i[show edit update destroy]
+  before_action :find_issue, only: %i[show edit update destroy reopen]
 
   def index
     @issues = current_user.issues
@@ -42,6 +42,16 @@ class IssuesController < ApplicationController
     else
       flash.now[:alert] = @issue.errors.full_messages
       render :edit
+    end
+  end
+
+  def reopen
+    authorize! :update, @issue
+
+    if @issue.update(status: :open)
+      redirect_to root_path, notice: 'Incidente reaberto.'
+    else
+      redirect_to root_path, alert: 'Não foi possível reabrir o incidente.'
     end
   end
 

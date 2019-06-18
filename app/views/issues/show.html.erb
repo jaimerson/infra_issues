@@ -1,3 +1,6 @@
+<% content_for :menu_items do %>
+  <%= link_to "Registrar incidente", new_issue_path %>
+<% end %>
 <div class="issue">
   <div class="title">
     <p>Incidente: <%= @issue.title %></p>
